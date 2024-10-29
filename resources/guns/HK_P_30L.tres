@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunResource" load_steps=3 format=3 uid="uid://bj2xdqqbij77v"]
+
+[ext_resource type="Script" path="res://resources/guns/base.gd" id="1_88hqd"]
+[ext_resource type="PackedScene" uid="uid://t1pyol8o4p2e" path="res://scenes/guns/HK_P_30L.tscn" id="1_bil0x"]
+
+[resource]
+script = ExtResource("1_88hqd")
+name = "HK P 30L"
+position = Vector3(-0.32427, 0.0901799, -0.104613)
+rotation = Vector3(-1.39626, 1.5708, 0)
+scale = Vector3(4, 4, 4)
+scene = ExtResource("1_bil0x")
+arm_reload = ""
+arm_reload_empty = ""
+arm_fire = ""
+arm_aim_in = ""

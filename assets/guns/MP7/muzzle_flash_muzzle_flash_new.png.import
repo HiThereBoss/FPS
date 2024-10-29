@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ctf7f2eq24tfd"
+path.s3tc="res://.godot/imported/muzzle_flash_muzzle_flash_new.png-8e7193ce446d00ac2a273823e535687c.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a8314e6e9794720e7a36e34ec628e3f3"
+}
+
+[deps]
+
+source_file="res://assets/guns/MP7/muzzle_flash_muzzle_flash_new.png"
+dest_files=["res://.godot/imported/muzzle_flash_muzzle_flash_new.png-8e7193ce446d00ac2a273823e535687c.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

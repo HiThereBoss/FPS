@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunResource" load_steps=3 format=3 uid="uid://utdqrrnmik7r"]
+
+[ext_resource type="PackedScene" uid="uid://bcmgkily07k74" path="res://scenes/guns/mp_7.tscn" id="1_g1cmc"]
+[ext_resource type="Script" path="res://resources/guns/base.gd" id="1_vafe4"]
+
+[resource]
+script = ExtResource("1_vafe4")
+name = "MP7"
+position = Vector3(0.392643, 0.184354, -0.0773083)
+rotation = Vector3(1.408, -1.388, 0.255)
+scale = Vector3(3, 3, 3)
+scene = ExtResource("1_g1cmc")
+arm_reload = ""
+arm_reload_empty = ""
+arm_fire = ""
+arm_aim_in = ""

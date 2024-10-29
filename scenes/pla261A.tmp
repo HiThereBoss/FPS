@@ -1,0 +1,322 @@
+[gd_scene load_steps=27 format=3 uid="uid://dx4co5ymu0bay"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ame5x"]
+[ext_resource type="PackedScene" uid="uid://b5fxgipcgxx7c" path="res://scenes/hand_cam.tscn" id="2_hxgag"]
+[ext_resource type="Theme" uid="uid://bfm7lywglr52k" path="res://UI/themes/new_theme.tres" id="3_nxpok"]
+[ext_resource type="Script" path="res://scenes/debug.gd" id="4_db4r0"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="5_5l8er"]
+[ext_resource type="Script" path="res://scripts/idle_player_state.gd" id="6_fg4br"]
+[ext_resource type="Script" path="res://scripts/walking_player_state.gd" id="7_7vmev"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_23bj2"]
+noise_type = 0
+fractal_octaves = 4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkt2k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h5b27"]
+radius = 0.4
+
+[sub_resource type="Animation" id="Animation_jogei"]
+resource_name = "Lean_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6, -0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_m08gr"]
+resource_name = "Lean_left_collided"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.10472)]
+}
+
+[sub_resource type="Animation" id="Animation_hqr67"]
+resource_name = "Lean_reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2n2lm"]
+resource_name = "Lean_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.6, -0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_b4psd"]
+resource_name = "Lean_right_collided"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.10472)]
+}
+
+[sub_resource type="Animation" id="Animation_j2ujs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gem5"]
+_data = {
+"Lean_left": SubResource("Animation_jogei"),
+"Lean_left_collided": SubResource("Animation_m08gr"),
+"Lean_reset": SubResource("Animation_hqr67"),
+"Lean_right": SubResource("Animation_2n2lm"),
+"Lean_right_collided": SubResource("Animation_b4psd"),
+"RESET": SubResource("Animation_j2ujs")
+}
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_xdw1k"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n7ttc"]
+animation = &"Lean_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hcl6q"]
+animation = &"Lean_left_collided"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6xdef"]
+animation = &"Lean_reset"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fbhp5"]
+animation = &"Lean_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4y8dk"]
+animation = &"Lean_right_collided"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_gl2ih"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kmrqw"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bxg4m"]
+graph_offset = Vector2(-351.92, 58.2472)
+nodes/lean_blend/node = SubResource("AnimationNodeBlend3_xdw1k")
+nodes/lean_blend/position = Vector2(600, 140)
+nodes/lean_left/node = SubResource("AnimationNodeAnimation_n7ttc")
+nodes/lean_left/position = Vector2(80, 20)
+nodes/lean_left_collided/node = SubResource("AnimationNodeAnimation_hcl6q")
+nodes/lean_left_collided/position = Vector2(20, 160)
+nodes/lean_reset/node = SubResource("AnimationNodeAnimation_6xdef")
+nodes/lean_reset/position = Vector2(340, 200)
+nodes/lean_right/node = SubResource("AnimationNodeAnimation_fbhp5")
+nodes/lean_right/position = Vector2(80, 360)
+nodes/lean_right_collided/node = SubResource("AnimationNodeAnimation_4y8dk")
+nodes/lean_right_collided/position = Vector2(20, 500)
+nodes/left_blend/node = SubResource("AnimationNodeBlend2_gl2ih")
+nodes/left_blend/position = Vector2(340, 0)
+nodes/output/position = Vector2(880, 160)
+nodes/right_blend/node = SubResource("AnimationNodeBlend2_kmrqw")
+nodes/right_blend/position = Vector2(340, 360)
+node_connections = [&"lean_blend", 0, &"left_blend", &"lean_blend", 1, &"lean_reset", &"lean_blend", 2, &"right_blend", &"left_blend", 0, &"lean_left", &"left_blend", 1, &"lean_left_collided", &"output", 0, &"lean_blend", &"right_blend", 0, &"lean_right", &"right_blend", 1, &"lean_right_collided"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
+script = ExtResource("1_ame5x")
+noise = SubResource("FastNoiseLite_23bj2")
+noise_speed = 100.0
+lean_duration = 0.3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fkt2k")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.587446, 0)
+
+[node name="Neck" type="Node3D" parent="Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Neck"]
+cull_mask = 1048569
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Neck/Camera3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Head/Neck/Camera3D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="hand_cam" parent="Head/Neck/Camera3D/SubViewportContainer/SubViewport" instance=ExtResource("2_hxgag")]
+cull_mask = 1047554
+
+[node name="lean_right_collider" type="ShapeCast3D" parent="Head"]
+shape = SubResource("SphereShape3D_h5b27")
+target_position = Vector3(0.9, 0, 0)
+
+[node name="lean_left_collider" type="ShapeCast3D" parent="Head"]
+shape = SubResource("SphereShape3D_h5b27")
+target_position = Vector3(-0.9, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7gem5")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_bxg4m")
+anim_player = NodePath("../AnimationPlayer")
+parameters/lean_blend/blend_amount = 0.0
+parameters/left_blend/blend_amount = 0.0
+parameters/right_blend/blend_amount = 0.0
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 53.0
+theme = ExtResource("3_nxpok")
+script = ExtResource("4_db4r0")
+
+[node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UserInterface/DebugPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("CURRENT_STATE")]
+script = ExtResource("5_5l8er")
+CURRENT_STATE = NodePath("IdlePlayerState")
+
+[node name="IdlePlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("6_fg4br")
+
+[node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("7_7vmev")

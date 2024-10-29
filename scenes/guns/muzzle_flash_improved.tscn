@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://b74enf31t3qdl"]
+
+[ext_resource type="Script" path="res://scenes/guns/muzzle_flash_improved.gd" id="1_16khj"]
+[ext_resource type="Shader" uid="uid://cs0y84xiqkvp3" path="res://shaders/muzzle_flash_improved.tres" id="1_in64d"]
+[ext_resource type="Texture2D" uid="uid://c0this57rtexo" path="res://resources/textures/Flame02.png" id="3_p310p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51rs6"]
+render_priority = 0
+shader = ExtResource("1_in64d")
+shader_parameter/MainText = ExtResource("3_p310p")
+
+[sub_resource type="Curve" id="Curve_1bu77"]
+_data = [Vector2(0, 0.0994962), 0.0, 0.0, 0, 0, Vector2(1, 0.00944591), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1ltms"]
+curve = SubResource("Curve_1bu77")
+
+[sub_resource type="Curve" id="Curve_m6gqg"]
+_data = [Vector2(0, 0.0421915), 0.0, 0.0, 0, 0, Vector2(1, 0.893577), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mtcvm"]
+curve = SubResource("Curve_m6gqg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o8s6o"]
+lifetime_randomness = 0.8
+emission_shape = 1
+emission_sphere_radius = 0.02
+angle_min = -360.0
+angle_max = 360.0
+spread = 36.628
+flatness = 0.175
+initial_velocity_min = 0.5
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0.5, 0)
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_mtcvm")
+color = Color(0.851769, 0.851769, 0.851769, 0.243137)
+alpha_curve = SubResource("CurveTexture_1ltms")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t3bbo"]
+
+[node name="muzzle_flash_improved" type="RayCast3D"]
+target_position = Vector3(0.1, 0, 0)
+debug_shape_custom_color = Color(0.314316, 0.314316, 0.314316, 1)
+script = ExtResource("1_16khj")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00123757)
+layers = 2
+material_override = SubResource("ShaderMaterial_51rs6")
+emitting = false
+amount = 250
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.4
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_o8s6o")
+draw_pass_1 = SubResource("QuadMesh_t3bbo")

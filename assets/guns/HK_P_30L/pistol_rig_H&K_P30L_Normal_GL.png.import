@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dyurcivakjfdc"
+path.s3tc="res://.godot/imported/pistol_rig_H&K_P30L_Normal_GL.png-cac450d66d2bdb85cec1127ce8dcb36b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a5ce5f84cbd6fb98cacb8331e7fb6141"
+}
+
+[deps]
+
+source_file="res://assets/guns/HK_P_30L/pistol_rig_H&K_P30L_Normal_GL.png"
+dest_files=["res://.godot/imported/pistol_rig_H&K_P30L_Normal_GL.png-cac450d66d2bdb85cec1127ce8dcb36b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/full rig/pistol_rig_H&K_P30L_Normal_GL.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtu6gingcetiq"]
+
+[ext_resource type="Script" path="res://scripts/terrain_particles.gd" id="1_isdvy"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t4yy7"]
+emission_shape = 1
+emission_sphere_radius = 0.02
+direction = Vector3(0, 0, -1)
+spread = 5.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, -2.5, 0)
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_441vi"]
+albedo_color = Color(0.329158, 0.329158, 0.329158, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dloo3"]
+material = SubResource("StandardMaterial3D_441vi")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="terrain_particles" type="GPUParticles3D"]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_t4yy7")
+draw_pass_1 = SubResource("BoxMesh_dloo3")
+script = ExtResource("1_isdvy")

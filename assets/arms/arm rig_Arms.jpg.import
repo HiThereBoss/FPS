@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://k6efr20gtoh4"
+path.s3tc="res://.godot/imported/arm rig_Arms.jpg-54ebe4f99ce74a125e7f122382d43bfe.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "02d21f0f9ac6327a5f7c2b98ccd74cda"
+}
+
+[deps]
+
+source_file="res://assets/arms/arm rig_Arms.jpg"
+dest_files=["res://.godot/imported/arm rig_Arms.jpg-54ebe4f99ce74a125e7f122382d43bfe.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbbwnw3ao1f3p"]
+
+[ext_resource type="Script" path="res://scenes/guns/bullet.gd" id="1_gepdh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bvxca"]
+size = Vector3(0.01, 0.01, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gajer"]
+albedo_color = Color(0.645317, 0.419176, 0.225481, 1)
+emission_enabled = true
+emission = Color(0.593819, 0.478479, 0.408731, 1)
+emission_energy_multiplier = 3.0
+
+[node name="bullet" type="Node3D"]
+script = ExtResource("1_gepdh")
+speed = 80.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bvxca")
+surface_material_override/0 = SubResource("StandardMaterial3D_gajer")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.283709)
+target_position = Vector3(0, 0, -2)
